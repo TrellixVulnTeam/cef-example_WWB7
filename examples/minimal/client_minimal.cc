@@ -5,10 +5,13 @@
 #include "examples/minimal/client_minimal.h"
 
 #include "examples/shared/client_util.h"
+#include "render_handler.h"
 
 namespace minimal {
 
-Client::Client() {}
+Client::Client() {
+  m_RenderHandler = new RenderHandler();
+}
 
 void Client::OnTitleChange(CefRefPtr<CefBrowser> browser,
                            const CefString& title) {

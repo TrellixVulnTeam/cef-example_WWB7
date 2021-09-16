@@ -18,6 +18,7 @@ set(EXAMPLE_SRCS
   ../minimal/client_minimal.cc
   ../minimal/client_minimal.h
   ../minimal/main_minimal.cc
+  ../minimal/render_handler.cc
   app_browser_impl.cc
   scheme_handler_impl.cc
   scheme_handler_impl.h

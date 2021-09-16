@@ -9,6 +9,8 @@
 #include "include/views/cef_window.h"
 #include "include/wrapper/cef_helpers.h"
 
+#include <iostream>
+
 namespace shared {
 
 namespace {
@@ -88,6 +90,9 @@ void CreateBrowser(CefRefPtr<CefClient> client,
   } else {
     // Information used when creating the native window.
     CefWindowInfo window_info;
+    std::cout << "[CreateBrowser]" <<std::endl;
+    window_info.SetAsWindowless(0);
+    window_info.shared_texture_enabled = false;
 
 #if defined(OS_WIN)
     // On Windows we need to specify certain flags that will be passed to

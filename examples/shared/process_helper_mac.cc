@@ -21,6 +21,7 @@ namespace shared {
 
 // Entry point function for sub-processes.
 int main(int argc, char* argv[]) {
+
 #if defined(CEF_USE_SANDBOX)
   // Initialize the macOS sandbox for this helper process.
   CefScopedSandboxContext sandbox_context;
@@ -53,7 +54,6 @@ int main(int argc, char* argv[]) {
     default:
       break;
   }
-
   // Execute the sub-process.
   return CefExecuteProcess(main_args, app, NULL);
 }

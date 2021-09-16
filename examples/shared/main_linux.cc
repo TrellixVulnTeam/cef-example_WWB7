@@ -5,7 +5,7 @@
 #include "examples/shared/main.h"
 
 #include <X11/Xlib.h>
-
+#include <iostream>
 #include "include/base/cef_logging.h"
 
 #include "examples/shared/app_factory.h"
@@ -35,6 +35,7 @@ int XIOErrorHandlerImpl(Display* display) {
 
 // Entry point function for all processes.
 int main(int argc, char* argv[]) {
+  std::cout << "[main linux] all " << argv[1] << std::endl;
   // Provide CEF with command-line arguments.
   CefMainArgs main_args(argc, argv);
 
@@ -74,6 +75,7 @@ int main(int argc, char* argv[]) {
 
   // Specify CEF global settings here.
   CefSettings settings;
+  settings.windowless_rendering_enabled = true;
 
   // Initialize CEF for the browser process. The first browser instance will be
   // created in CefBrowserProcessHandler::OnContextInitialized() after CEF has

@@ -12,6 +12,7 @@ set(EXAMPLE_SRCS
   client_minimal.cc
   client_minimal.h
   main_minimal.cc
+   render_handler.cc
   )
 
 if(OS_LINUX OR OS_WINDOWS)

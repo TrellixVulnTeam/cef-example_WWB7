@@ -17,7 +17,9 @@ const char kStartupURL[] = "https://www.google.com";
 // Minimal implementation of CefApp for the browser process.
 class BrowserApp : public CefApp, public CefBrowserProcessHandler {
  public:
-  BrowserApp() {}
+  BrowserApp() {
+
+  }
 
   // CefApp methods:
   CefRefPtr<CefBrowserProcessHandler> GetBrowserProcessHandler() OVERRIDE {

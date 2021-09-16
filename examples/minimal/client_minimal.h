@@ -6,6 +6,8 @@
 #define CEF_EXAMPLES_MINIMAL_CLIENT_MINIMAL_H_
 
 #include "include/cef_client.h"
+#include "render_handler.h"
+#include <iostream>
 
 namespace minimal {
 
@@ -19,7 +21,10 @@ class Client : public CefClient,
   // CefClient methods:
   CefRefPtr<CefDisplayHandler> GetDisplayHandler() OVERRIDE { return this; }
   CefRefPtr<CefLifeSpanHandler> GetLifeSpanHandler() OVERRIDE { return this; }
-
+  CefRefPtr<CefRenderHandler> GetRenderHandler() override {
+    std::cout << "[getrenderhandler] " <<m_RenderHandler <<std::endl;
+    return m_RenderHandler;
+  }
   // CefDisplayHandler methods:
   void OnTitleChange(CefRefPtr<CefBrowser> browser,
                      const CefString& title) OVERRIDE;
@@ -32,6 +37,8 @@ class Client : public CefClient,
  private:
   IMPLEMENT_REFCOUNTING(Client);
   DISALLOW_COPY_AND_ASSIGN(Client);
+
+  CefRefPtr<RenderHandler> m_RenderHandler;
 };
 
 }  // namespace minimal

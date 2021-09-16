@@ -3,6 +3,7 @@
 // can be found in the LICENSE file.
 
 #include "examples/shared/main.h"
+#include <iostream>
 
 // Main program entry point function.
 #if defined(OS_WIN)
@@ -17,6 +18,7 @@ int APIENTRY wWinMain(HINSTANCE hInstance,
 }
 #else
 int main(int argc, char* argv[]) {
+  std::cout << "[main minimal]" <<std::endl;
   return shared::main(argc, argv);
 }
 #endif
